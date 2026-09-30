@@ -2,15 +2,18 @@
 
 int main(void)
 {
-    int num;
+    int c;
+    int num = 0;
 
-    printf("정수를 입력하시오: ");
-    scanf("%d", &num);
+    printf("문자열을 입력하시오: ");
 
-    if (num < 0)
-        num = -num;
+    while ((c = getchar()) != '\n')
+    {
+        if (c >= '0' && c <= '9')
+            num++;
+    }
 
-    printf("절대값: %d\n", num);
+    printf("숫자의 개수: %d\n", num);
 
     return 0;
 }
