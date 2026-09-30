@@ -2,28 +2,27 @@
 
 int main(void)
 {
-    int num1, num2;
-    char op;
-    int result;
+    int answer = 59;
+    int guess;
+    int count = 0;
 
-    printf("계산식을 입력하시오: ");
-    scanf("%d %c %d", &num1, &op, &num2);
-
-    if (op == '+')
-        result = num1 + num2;
-    else if (op == '-')
-        result = num1 - num2;
-    else if (op == '*')
-        result = num1 * num2;
-    else if (op == '/')
-        result = num1 / num2;
-    else
+    do
     {
-        printf("잘못된 연산자입니다.\n");
-        return 0;
-    }
+        printf("숫자를 입력하시오: ");
+        scanf("%d", &guess);
 
-    printf("%d %c %d = %d\n", num1, op, num2, result);
+        count++;
+
+        if (guess > answer)
+            printf("정답보다 큽니다.\n");
+        else if (guess < answer)
+            printf("정답보다 작습니다.\n");
+        else
+            printf("정답입니다!\n");
+
+    } while (guess != answer);
+
+    printf("시도 횟수: %d\n", count);
 
     return 0;
 }
